@@ -17,16 +17,16 @@ function setConfigMulter({
                 '../../../files/upload/static/cache/'
             ),
             filename: (req, file, cb) => {
-                const date: string = new Date()
-                    .getTime()
-                    .toString()
-                    .replace(/[\/\\:]/g, '_');
-                const hash = crypto.randomBytes(24).toString('base64');
-                const filename = `${hash}-${date}${path.extname(
-                    file.originalname
-                )}`;
+                // const date: string = new Date()
+                //     .getTime()
+                //     .toString()
+                //     .replace(/[\/\\:]/g, '_');
+                // const hash = crypto.randomBytes(24).toString('base64');
+                // const filename = `${hash}-${date}${path.extname(
+                //     file.originalname
+                // )}`;
 
-                return cb(null, filename);
+                return cb(null, file.originalname);
             },
         }),
 
