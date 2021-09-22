@@ -29,14 +29,14 @@ const UploadController = {
 
             if (error.message === 'INVALID_FILE_EXTNAME') {
                 return res.status(400).send({
-                    message: 'File type is invaliad',
+                    message: 'File type is invalid',
                     FilesTypeAccept: MulterConfig.AllowFile,
                 });
             }
 
             return res.status(400).send({
                 message:
-                    "Your request unfurtunally we can't tresolve, try again",
+                    "We Unfortunately can't resolve your request, try again",
             });
         }
     },
