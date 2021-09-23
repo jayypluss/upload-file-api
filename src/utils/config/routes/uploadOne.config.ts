@@ -1,5 +1,5 @@
 export const MulterConfig = {
-    QuantityLimit: 5,
+    QuantityLimit: 10,
     FileSize: 16,
     AllowFile: ['svg', 'png', 'jpg', 'jpeg', 'webp'],
 };
