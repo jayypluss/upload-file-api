@@ -1,0 +1,66 @@
+[
+  {
+    "id": 0,
+    "categoryId": 0,
+    "name": "Ambiente 1",
+    "description": "Ambiente 1 - Descrição",
+    "fileName": "ambiente_1.webp",
+    "thumbFileName": ""
+  },
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Aparador 1",
+    "description": "Aparador 1 - Descrição",
+    "fileName": "aparador_1.webp",
+    "thumbFileName": ""
+  },
+  {
+    "id": 2,
+    "categoryId": 2,
+    "name": "Mesa 1",
+    "description": "Mesa 1 - Descrição",
+    "fileName": "mesa_1.webp",
+    "thumbFileName": ""
+  },
+  {
+    "id": 3,
+    "categoryId": 3,
+    "name": "Puff 1",
+    "description": "Puff 1 - Descrição",
+    "fileName": "puff_1.webp",
+    "thumbFileName": ""
+  },
+  {
+    "id": 4,
+    "categoryId": 4,
+    "name": "Sofá 1",
+    "description": "Sofá 1 - Descrição",
+    "fileName": "sofa_1.webp",
+    "thumbFileName": ""
+  },
+  {
+    "id": 5,
+    "categoryId": 4,
+    "name": "Sofá 2",
+    "description": "Sofá 2 - Descrição",
+    "fileName": "sofa_2.webp",
+    "thumbFileName": ""
+  },
+  {
+    "id": 6,
+    "categoryId": 5,
+    "name": "Mesa Central 1",
+    "description": "Mesa Central 1 - Descrição",
+    "fileName": "mesa_central_1.webp",
+    "thumbFileName": ""
+  },
+  {
+    "id": 7,
+    "categoryId": 6,
+    "name": "Cadeira 1",
+    "description": "Cadeira 1 - Descrição",
+    "fileName": "cadeira_1.webp",
+    "thumbFileName": ""
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "0",
+    "name": "Ambientes",
+    "renderIndex": "0",
+    "items": [],
+    "type": "BACKGROUNDS"
+  },
+  {
+    "id": "1",
+    "name": "Aparadores",
+    "renderIndex": "1",
+    "items": [],
+    "type": "ITEMS"
+  },
+  {
+    "id": "2",
+    "name": "Mesas",
+    "renderIndex": "2",
+    "items": [],
+    "type": "ITEMS"
+  },
+  {
+    "id": "3",
+    "name": "Puffs",
+    "renderIndex": "3",
+    "items": [],
+    "type": "ITEMS"
+  },
+  {
+    "id": "4",
+    "name": "Sofas",
+    "renderIndex": "4",
+    "items": [],
+    "type": "ITEMS"
+  },
+  {
+    "id": "5",
+    "name": "Mesa central",
+    "renderIndex": "5",
+    "items": [],
+    "type": "ITEMS"
+  },
+  {
+    "id": "6",
+    "name": "Cadeiras",
+    "renderIndex": "6",
+    "items": [],
+    "type": "ITEMS"
+  }
+]
