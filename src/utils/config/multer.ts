@@ -1,5 +1,4 @@
 import { Options, diskStorage } from 'multer';
-import crypto from 'crypto';
 import path from 'path';
 import IMulterConfig from 'src/utils/interfaces/ConfigMulter';
 

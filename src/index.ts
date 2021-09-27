@@ -1,5 +1,6 @@
 require("./app/Schemas/Category");
 require("./app/Schemas/Item");
+require("./app/Schemas/Image");
 import 'dotenv/config';
 import APP from './app';
 import { connect } from 'mongoose'

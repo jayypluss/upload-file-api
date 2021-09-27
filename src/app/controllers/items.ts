@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import {Item} from "../Models/Item";
 import {model} from "mongoose";
 
-const ItemSchemaModel = model('Item');
+const ItemSchemaModel = model('Item')
 
 const CategoriesController = {
     async getAllItems(req: Request, res: Response) {
