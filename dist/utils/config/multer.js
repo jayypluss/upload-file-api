@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const multer_1 = require("multer");
-const crypto_1 = __importDefault(require("crypto"));
 const path_1 = __importDefault(require("path"));
 function setConfigMulter({ QuantityLimit, FileSize, AllowFile, }) {
     const config = {
@@ -12,13 +11,15 @@ function setConfigMulter({ QuantityLimit, FileSize, AllowFile, }) {
         storage: multer_1.diskStorage({
             destination: path_1.default.join(__dirname, '../../../files/upload/static/cache/'),
             filename: (req, file, cb) => {
-                const date = new Date()
-                    .getTime()
-                    .toString()
-                    .replace(/[\/\\:]/g, '_');
-                const hash = crypto_1.default.randomBytes(24).toString('base64');
-                const filename = `${hash}-${date}${path_1.default.extname(file.originalname)}`;
-                return cb(null, filename);
+                // const date: string = new Date()
+                //     .getTime()
+                //     .toString()
+                //     .replace(/[\/\\:]/g, '_');
+                // const hash = crypto.randomBytes(24).toString('base64');
+                // const filename = `${hash}-${date}${path.extname(
+                //     file.originalname
+                // )}`;
+                return cb(null, file.originalname);
             },
         }),
         limits: {

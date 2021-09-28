@@ -24,19 +24,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
 const path_1 = __importDefault(require("path"));
-const ClearCacheController = {
-    async clearCache(req, res) {
+const ListController = {
+    async listAll(req, res) {
         // directory path
         // const dir = '../../../files/upload/static/cache';
         const dir = path_1.default.join(__dirname, '../../../files/upload/static/cache/');
-        // delete directory recursively
-        try {
-            fs.rmdirSync(dir, { recursive: true });
-            console.log(`${dir} is deleted!`);
-        }
-        catch (err) {
-            console.error(`Error while deleting ${dir}.`);
-        }
+        // list all files in the directory
+        fs.readdir(dir, (err, files) => {
+            if (err) {
+                if (err.code == 'ENOENT')
+                    return res.status(200).send({ message: 'No files in cache.' });
+                return res.status(500).send({ err });
+            }
+            // files object contains all files names
+            // log them on console
+            files.forEach(file => {
+                console.log(file);
+            });
+            if (files)
+                return res.status(200).send({ files });
+        });
     },
 };
-exports.default = ClearCacheController;
+exports.default = ListController;
