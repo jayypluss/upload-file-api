@@ -72,7 +72,9 @@ const UploadController = {
                 let savedImage = await image.save();
                 newSavedImages.push({
                     _id: savedImage._id,
+                    // @ts-ignore
                     filename: savedImage.fileName,
+                    // @ts-ignore
                     contentType: savedImage.file.contentType
                 })
                 // newSavedImages.push(savedImage)
