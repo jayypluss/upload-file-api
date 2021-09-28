@@ -95,6 +95,8 @@ const UploadController = {
                 });
             }
 
+            return res.status(400).send({ error });
+
             return res.status(400).send({
                 message:
                     "We Unfortunately can't resolve your request, try again",
