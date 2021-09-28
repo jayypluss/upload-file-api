@@ -33,6 +33,7 @@ const DataController = {
                 const category = new CategorySchemaModel({
                     name: newCategory.name,
                     renderIndex: newCategory.renderIndex,
+                    thumbFileName: newCategory.thumbFileName,
                     type: newCategory.type ?? CategoryType.ITEMS });
 
                 newSavedCategories.push(await category.save());

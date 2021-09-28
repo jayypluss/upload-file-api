@@ -8,8 +8,14 @@ const categorySchema = new Schema({
     unique: true
   },
   renderIndex: Number,
+  thumbFileName: String,
   items: [itemsSchema],
   type: String,
+},  {
+  writeConcern: {
+    j: true,
+    wtimeout: 1000
+  }
 })
 
 model('Category', categorySchema)

@@ -8,11 +8,16 @@ export const itemsSchema = new Schema({
   },
   name: {
     type: String,
-    unique: true
+    // unique: true
   },
   description: String,
   fileName: String,
   thumbFileName: String,
+},  {
+  writeConcern: {
+    j: true,
+    wtimeout: 1000
+  }
 })
 
 model('Item', itemsSchema)
