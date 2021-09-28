@@ -3,7 +3,6 @@ import { promisify as Promisify } from 'util';
 import Multer from 'multer';
 import setConfigMulter from '../../utils/config/multer';
 import { MulterConfig } from '../../utils/config/routes/uploadOne.config';
-import path from "path";
 import {model} from "mongoose";
 import {readFileSync} from "fs";
 
