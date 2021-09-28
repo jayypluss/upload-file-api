@@ -12,7 +12,7 @@ const CategoriesController = {
     },
     async getCategoryItems(req: Request, res: Response) {
         const categoryId = req.params[0]
-        const items = await ItemSchemaModel.find({ categoryId });
+        const items = await ItemSchemaModel.find({ _id: categoryId });
 
         return res.status(200).send(items);
     },
