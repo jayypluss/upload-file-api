@@ -11,8 +11,8 @@ const CategoriesController = {
         return res.status(200).send(items);
     },
     async getCategoryItems(req: Request, res: Response) {
-        const categoryId = req.params[0]
-        const items = await ItemSchemaModel.find({ _id: categoryId });
+        const categoryId = req.params?.categoryId
+        const items = await ItemSchemaModel.find({ categoryId });
 
         return res.status(200).send(items);
     },
