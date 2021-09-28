@@ -10,15 +10,17 @@ import ItemsController from "../controllers/items";
 const Routes = Router();
 
 // Routes.post('/auth', AuthController.auth);
-Routes.post('/clearCache', ClearCacheController.clearCache);
-Routes.post('/upload', UploadController.uploadOne);
-Routes.post('/multiUpload', UploadController.multiUpload);
+
+Routes.get('/list', ListController.listAll);
+Routes.get('/categories/:categoryId/items', ItemsController.getCategoryItems);
+Routes.get('/items', ItemsController.getAllItems);
 Routes.get('/download/*', DownloadController.downloadFile);
 Routes.get('/categories', CategoriesController.getAllCategories);
+
 Routes.post('/categories', CategoriesController.createNewCategories);
-Routes.get('/categories/:categoryId/items', ItemsController.createNewItems);
-Routes.get('/items', ItemsController.getAllItems);
 Routes.post('/items', ItemsController.createNewItems);
-Routes.get('/list', ListController.listAll);
+Routes.post('/multiUpload', UploadController.multiUpload);
+// Routes.post('/upload', UploadController.uploadOne);
+// Routes.post('/clearCache', ClearCacheController.clearCache);
 
 export default Routes;

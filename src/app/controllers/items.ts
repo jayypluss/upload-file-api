@@ -6,8 +6,13 @@ const ItemSchemaModel = model('Item')
 
 const CategoriesController = {
     async getAllItems(req: Request, res: Response) {
-
         const items = await ItemSchemaModel.find({});
+
+        return res.status(200).send(items);
+    },
+    async getCategoryItems(req: Request, res: Response) {
+        const categoryId = req.params[0]
+        const items = await ItemSchemaModel.find({ categoryId });
 
         return res.status(200).send(items);
     },
@@ -19,7 +24,7 @@ const CategoriesController = {
 
         const newItems: Item[] = req.body
         const newSavedItems = []
-        // console.log(newCategories)
+        console.log(req.params)
 
         for (const newItem of newItems) {
             if (!newItem.name || (!req.params[0] && !newItem.categoryId) || !newItem.description || !newItem.fileName) {
