@@ -7,6 +7,11 @@ export const imageSchema = new Schema({
     contentType: String
   },
   fileName: String
+},  {
+  writeConcern: {
+    j: true,
+    wtimeout: 1000
+  }
 })
 
 model('Image', imageSchema)
