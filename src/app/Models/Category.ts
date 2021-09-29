@@ -2,9 +2,10 @@ import { CategoryType } from './CategoryType';
 import {Item} from "./Item";
 
 export interface Category {
-    id: string
+    _id: string
     name: string
     renderIndex: number
     items?: Item[]
+    thumbFileName?: Item[]
     type?: CategoryType
 }
