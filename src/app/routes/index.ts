@@ -1,7 +1,5 @@
 import { Router } from 'express';
 import UploadController from '../controllers/upload';
-import ClearCacheController from "../controllers/clear";
-import ImageController from "../controllers/list";
 import DownloadController from "../controllers/download";
 import CategoriesController from "../controllers/categories";
 import ItemsController from "../controllers/items";
@@ -24,6 +22,8 @@ Routes.post('/categories/:categoryId/delete', CategoriesController.deleteCategor
 Routes.post('/items', ItemsController.createNewItems);
 Routes.post('/items/:itemId/edit', ItemsController.editItem);
 Routes.post('/items/:itemId/delete', ItemsController.deleteItem);
+Routes.post('/images/:imageId/replace', UploadController.reUpload);
+Routes.post('/images/:imageId/delete', ImagesController.deleteImage);
 Routes.post('/multiUpload', UploadController.multiUpload);
 
 // Routes.post('/upload', UploadController.uploadOne);

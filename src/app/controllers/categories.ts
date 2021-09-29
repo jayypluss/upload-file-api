@@ -37,9 +37,9 @@ const CategoriesController = {
         const categoryDeleteResponse = await CategorySchemaModel.deleteOne({ _id: id });
 
         if (categoryDeleteResponse.deletedCount > 0)
-            return res.status(200).send(categoryDeleteResponse)
+            return res.status(200).send({ message: `Category deleted suscessfully. `, categoryId: id, categoryDeleteResponse })
         else
-            return res.status(500).send({ message: `Couldn't delete category ${id}.`, deleteResponse: categoryDeleteResponse })
+            return res.status(500).send({ message: `Couldn't delete Category.`, categoryId: id, categoryDeleteResponse })
     },
     async createNewCategories(req: Request, res: Response) {
         let newCategories = req.body
