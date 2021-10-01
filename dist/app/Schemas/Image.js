@@ -9,5 +9,10 @@ exports.imageSchema = new mongoose_1.Schema({
         contentType: String
     },
     fileName: String
+}, {
+    writeConcern: {
+        j: true,
+        wtimeout: 1000
+    }
 });
 mongoose_1.model('Image', exports.imageSchema);

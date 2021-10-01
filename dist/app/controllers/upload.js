@@ -81,9 +81,50 @@ const UploadController = {
                     FilesTypeAccept: uploadOne_config_1.MulterConfig.AllowFile,
                 });
             }
-            return res.status(400).send({
-                message: "We Unfortunately can't resolve your request, try again",
+            return res.status(400).send({ error });
+            // return res.status(400).send({
+            //     message:
+            //         "We Unfortunately can't resolve your request, try again",
+            // });
+        }
+    },
+    async reUpload(req, res) {
+        try {
+            const multer = util_1.promisify(multer_1.default(multer_2.default(uploadOne_config_1.MulterConfig)).single('file'));
+            await multer(req, res);
+            if (!req.file) {
+                return res
+                    .status(400)
+                    .send({ message: 'Please add a file!' });
+            }
+            const id = req.params.imageId;
+            const file = req.file;
+            const imageUpdateResponse = await ImageSchemaModel.updateOne({ _id: id }, {
+                fileName: file.originalname,
+                file: {
+                    data: fs_1.readFileSync(file.path),
+                    contentType: file.mimetype
+                }
             });
+            console.log(imageUpdateResponse);
+            return res.status(200).send({ message: 'Image replaced successfuly' });
+        }
+        catch (error) {
+            console.log(error);
+            // if (error.message === 'LIMIT_FILE_SIZE') {
+            //     return res.status(500).send({
+            //         message: `File size cannot be larger than ${MulterConfig}MB!`,
+            //     });
+            // }
+            //
+            // if (error.message === 'INVALID_FILE_EXTNAME') {
+            //     return res.status(400).send({
+            //         message: 'File type is invalid',
+            //         FilesTypeAccept: MulterConfig.AllowFile,
+            //     });
+            // }
+            //
+            // return res.status(400).send({ error });
         }
     },
 };

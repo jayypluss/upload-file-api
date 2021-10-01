@@ -9,7 +9,13 @@ const categorySchema = new mongoose_1.Schema({
         unique: true
     },
     renderIndex: Number,
+    thumbFileName: String,
     items: [Item_1.itemsSchema],
     type: String,
+}, {
+    writeConcern: {
+        j: true,
+        wtimeout: 1000
+    }
 });
 mongoose_1.model('Category', categorySchema);
